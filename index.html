@@ -1,0 +1,166 @@
+<style>
+    /* playpiano _ script3 */
+.piano_container { min-height: 37vw; width: 67vw; background-color: #F8F4F0; margin: 0 auto; padding: 0; font-family: s-core-dream; } 
+.piano_container h3 { font-size: 2vw; padding-top: 4vw; text-align: center; } 
+.piano_keys { transform: scale(1); display: flex; align-items: center; justify-content: center; height:20vw; width:90%; margin:5vw auto;}
+.piano_key { position:relative; float:left; margin:0; padding:0; font-size: 0.5vw; transition: all .0001s ease; width: 7.9rem; text-align: center; color: black; } 
+.white { height:18vw; width:7vw; z-index:1; border-left:1px solid #bbb; border-bottom:1px solid #bbb; border-radius:0 0 5px 5px; box-shadow:-1px 0 0 rgba(255,255,255,0.8) inset,0 0 5px #ccc inset,0 0 3px rgba(0,0,0,0.2); background:linear-gradient(to bottom,#eee 0%,#fff 100%)}
+.black { height:10vw; width:4.5vw; margin:0 0 0 -2.3vw; margin-bottom: 8vw; z-index:2; border:1px solid #000; border-radius:0 0 3px 3px; box-shadow:-1px -1px 2px rgba(255,255,255,0.2) inset,0 -5px 2px 3px rgba(0,0,0,0.6) inset,0 2px 4px rgba(0,0,0,0.5); background:linear-gradient(45deg,#222 0%,#555 100%)}
+.g,.a,.b,.d,.e { margin:0 0 0 -2.5vw; } 
+.piano_key:first-child { border-radius:5px 0 5px 5px}
+.piano_key:last-child { border-radius:0 5px 5px 5px}
+.playing { transform: scale(1); border-top:1px solid #777; border-left:1px solid #999; border-bottom:1px solid #999; box-shadow:2px 0 3px rgba(0,0,0,0.1) inset,-5px 5px 20px rgba(0,0,0,0.2) inset,0 0 3px rgba(0,0,0,0.2); } 
+.white kbd { display: block; font-size: 4vw; margin-top: 11vw; } 
+.black kbd { display: block; font-size: 4vw; color: white; margin-top: 2vw; } 
+.sound { font-size: 1rem; text-transform: uppercase; letter-spacing: .1rem; color: #000000; } 
+@media (max-width: 480px) { 
+    #section3 .triangle1 {display: none;}
+    @keyframes r1-anim {
+        50%, 75%  {
+          margin-left: 3.5vw;
+          margin-right: 3.5vw;
+        }
+      }
+    }
+    @media (max-width: 320px) { 
+    #section3 .chrc h3 span.icon1 {background-size: 3vw;}
+    #section3 .chrc h3 span.icon2 {background-size: 3vw;}
+} 
+</style>
+<section id="script" class="script3">
+    <div class="mainContainer">
+      <div class="content_wrap leftWrap goRight">
+        <div class="frame">
+            <span class="lineBottom" aria-hidden="true"></span>
+        </div>
+        <div class="wideBox2">
+          <div class="riw_vertical">
+            <!-- <small></small> -->
+          </div>
+          <div class="tabMenu">
+            <div class="tabBar"></div>
+            <div class="tab_content">
+              <ul class="nacc">
+                <li id="tab1" class="tab_code active" style="list-style: none;">
+                  <div class="piano_container">
+                    <h3>권세영 피아노 연습실</h3>
+                    <div class="piano_keys">
+                      <div data-key="65" class="piano_key white c">
+                        <kbd>A</kbd>
+                        <span class="sound"></span>
+                      </div>
+                      <div data-key="87" class="piano_key black cs">
+                        <kbd>W</kbd>
+                        <span class="sound"></span>
+                      </div>
+                      <div data-key="83" class="piano_key white d">
+                        <kbd>S</kbd>
+                        <span class="sound"></span>
+                      </div>
+                      <div data-key="69" class="piano_key black ds">
+                        <kbd>E</kbd>
+                        <span class="sound"></span>
+                      </div>
+                      <div data-key="68" class="piano_key white e">
+                        <kbd>D</kbd>
+                        <span class="sound"></span>
+                      </div>
+                      <div data-key="70" class="piano_key white f">
+                        <kbd>F</kbd>
+                        <span class="sound"></span>
+                      </div>
+                      <div data-key="84" class="piano_key black fs">
+                        <kbd>T</kbd>
+                        <span class="sound"></span>
+                      </div>
+                      <div data-key="71" class="piano_key white g">
+                        <kbd>G</kbd>
+                        <span class="sound"></span>
+                      </div>
+                      <div data-key="89" class="piano_key black gs">
+                        <kbd>Y</kbd>
+                        <span class="sound"></span>
+                      </div>
+                      <div data-key="72" class="piano_key white a">
+                        <kbd>H</kbd>
+                        <span class="sound"></span>
+                      </div>
+                      <div data-key="85" class="piano_key black as">
+                        <kbd>U</kbd>
+                        <span class="sound"></span>
+                      </div>
+                      <div data-key="74" class="piano_key white b">
+                        <kbd>J</kbd>
+                        <span class="sound"></span>
+                      </div>
+                    </div>
+
+                  </div>
+                  <audio data-key="65" src="assets/sounds/C4.mp3"></audio>
+                  <audio data-key="87" src="assets/sounds/CS4.mp3"></audio>
+                  <audio data-key="83" src="assets/sounds/D4.mp3"></audio>
+                  <audio data-key="69" src="assets/sounds/DS4.mp3"></audio>
+                  <audio data-key="68" src="assets/sounds/E4.mp3"></audio>
+                  <audio data-key="70" src="assets/sounds/F4.mp3"></audio>
+                  <audio data-key="84" src="assets/sounds/FS4.mp3"></audio>
+                  <audio data-key="71" src="assets/sounds/G4.mp3"></audio>
+                  <audio data-key="89" src="assets/sounds/GS4.mp3"></audio>
+                  <audio data-key="72" src="assets/sounds/A4.mp3"></audio>
+                  <audio data-key="85" src="assets/sounds/AS4.mp3"></audio>
+                  <audio data-key="74" src="assets/sounds/B4.mp3"></audio>
+                </li>
+                <!-- <li id="tab2" class="tab_code">
+                  <pre class="line-numbers">
+                    <code class="language-js">
+                      function playSound(e){
+                        const audio = document.querySelector(`audio[data-key = "${e.keyCode}"]`);
+                        const piano_key = document.querySelector(`.piano_key[data-key = "${e.keyCode}"]`);
+                        if(!audio) return; // stop the function from running all together.
+                        audio.currentTime = 0; // rewind to the start.
+                        audio.play();
+                        piano_key.classList.add('playing');
+                        piano_key.classList.remove('playing');
+                        piano_key.classList.toggle('playing');
+                      }
+                      
+                      function removeTransition(e){
+                        if(e.propertyName !== 'transform') return; // skip it if it's not a transform.
+                        this.classList.remove('playing');
+                      }
+                      
+                      const keys = document.querySelectorAll('.piano_key');
+                      keys.forEach(piano_key => piano_key.addEventListener('transitionend' , removeTransition));
+                    
+                      window.addEventListener("keydown", playSound);                  
+                    </code>
+                  </pre>
+                </li> -->
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+      <script>
+        /* piano */
+function playSound(e) {
+  const audio = document.querySelector(`audio[data-key = "${e.keyCode}"]`);
+  const piano_key = document.querySelector(
+    `.piano_key[data-key = "${e.keyCode}"]`
+  );
+  if (!audio) return; // stop the function from running all together.
+  audio.currentTime = 0; // rewind to the start.
+  audio.play();
+  piano_key.classList.add("playing");
+  piano_key.classList.remove("playing");
+  piano_key.classList.toggle("playing");
+}
+function removeTransition(e) {
+  if (e.propertyName !== "transform") return; // skip it if it's not a transform.
+  this.classList.remove("playing");
+}
+const keys = document.querySelectorAll(".piano_key");
+keys.forEach((piano_key) =>
+  piano_key.addEventListener("transitionend", removeTransition)
+);
+window.addEventListener("keydown", playSound);
+      </script>
